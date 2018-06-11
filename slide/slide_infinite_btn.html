@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="./js/jquery-1.12.4.min.js"></script>
+	<style>
+		*{margin:0;padding:0;}
+		ul,li{list-style:none;}
+		.slide{height:400px;overflow:hidden;position:relative;}
+		.slide ul,
+		.slide li{height:100%;}
+		.slide ul{width:300%;display:flex;}
+		.slide li{width:33.333%;position:relative;display:flex;align-items:center;justify-content:center;}
+		.slide .slide1 .bg{background:#ffa;}
+		.slide .slide2 .bg{background:#afa;}
+		.slide .slide3 .bg{background:#faa;}
+		.slide .bg{position:absolute;left:0;right:0;top:0;bottom:0;}
+		.slide .text{position:relative;text-align:center;}
+		.slide .text *{opacity:0;}
+		.slide .text h3{font-size:40px;}
+		.slide .text p{font-size:25px;margin:20px 0;}
+		.slide .text .btn{display:inline-block;text-decoration:none;color:#fff;background:#09f;padding:7px 40px;}
+		.slide li.active *{opacity:1;}
+		.slide li.active .text h3{animation:subject 1s;}
+		.slide li.active .text p{animation:info 1s;}
+		.slide li.active .text .btn{animation:btn 1s;}
+		.slide .arrow{position:absolute;top:calc(50% - 25px);width:50px;height:50px;line-height:50px;font-size:50px;color:#666;opacity:.5;transition:.3s;text-decoration:none;}
+		.slide .arrow:hover{opacity:1;}
+		.slide .arrow.left{left:0;}
+		.slide .arrow.right{right:0;}
+		.slide .pos{bottom:20px;left:0;right:0;text-align:center;position:absolute;}
+		.slide .pos a{display:inline-block;width:10px;height:10px;border-radius:10px;background:#666;opacity:.5;transition:.3s;font-size:0;text-decoration:none;}
+		.slide .pos a:hover,
+		.slide .pos a.active{opacity:1;}
+		@keyframes subject {
+			0% {opacity:0;transform:translateY(-50px);}
+			60% {opacity:1;transform:inherit;}
+		}
+		@keyframes info {
+			0%,
+			20% {opacity:0;transform:translateY(-50px);}
+			80% {opacity:1;transform:inherit;}
+		}
+		@keyframes btn {
+			0%,
+			40% {opacity:0;transform:translateY(-50px);}
+			100% {opacity:1;transform:inherit;}
+		}
+	</style>
+</head>
+<body>
+	<div class="slide">
+		<ul>
+			<li class="slide1 active">
+				<div class="bg"></div>
+				<div class="text">
+					<h3>제목</h3>
+					<p>내용</p>
+					<a href="#" class="btn">버튼</a>
+				</div>
+			</li>
+			<li class="slide2">
+				<div class="bg"></div>
+				<div class="text">
+					<h3>제목</h3>
+					<p>내용</p>
+					<a href="#" class="btn">버튼</a>
+				</div>
+			</li>
+			<li class="slide3">
+				<div class="bg"></div>
+				<div class="text">
+					<h3>제목</h3>
+					<p>내용</p>
+					<a href="#" class="btn">버튼</a>
+				</div>
+			</li>
+		</ul>
+		<a href="#" class="arrow left">&lt;</a>
+		<a href="#" class="arrow right">&gt;</a>
+		<p class="pos">
+			<a href="#" class="active">1</a>
+			<a href="#">2</a>
+			<a href="#">3</a>
+		</p>
+	</div>
+	<script>
+		function slide(){
+			var pos = 1;
+			var len = $(".slide li").length+2;
+			var obj = $(".slide ul");
+			var wrap = $(".slide");
+			var timer = null;
+			var playTime = 3000;
+			var first = $('>li:first-child',obj).clone().removeClass("active");
+			var last = $('>li:last-child',obj).clone();
+			obj.append(first);
+			obj.prepend(last);
+			obj.css("width",len*100+"%");
+			obj.css("marginLeft","-100%");
+			function play(){
+				clearTimeout(timer);
+				pos++;
+				obj.animate({
+					marginLeft:-pos*100+"%"
+				}, 1000, function(){
+					if(pos>=len-1){
+						pos = 1;
+					} else if(pos <= 0){
+						pos = len-2;
+					}
+					obj.css("marginLeft",-pos*100+"%");
+					$(".pos a.active",wrap).removeClass("active");
+					$(".pos a",wrap).eq(pos-1).addClass("active");
+					$("li.active",obj).removeClass("active");
+					$("li",obj).eq(pos).addClass("active");
+				})
+				timer = setTimeout(play,playTime);
+			}
+
+			$(".pos a",wrap).click(function(){
+				pos = $(this).index();
+				play();
+			})
+
+			$(".arrow",wrap).click(function(){
+				if($(this).hasClass("left")) pos -= 2;
+				play();
+			})
+			timer = setTimeout(play,playTime);
+		}
+		slide();
+	</script>
+</body>
+</html>

@@ -7,7 +7,7 @@
 	<style>
 		*{margin:0;padding:0;}
 		ul,li{list-style:none;}
-		.slide{height:400px;width:100;}
+		.slide{height:400px;}
 		.slide ul,
 		.slide li{height:100%;}
 		.slide ul{width:300%;display:flex;}
@@ -71,30 +71,101 @@
 		</ul>
 	</div>
 	<script>
-		function slide(){
-			var pos = 0;
+		function slide(option){
+			var pos = 1;
 			var len = $(".slide li").length;
 			var obj = $(".slide ul");
+			var slide = obj.parent()
 			var timer = null;
 			var playTime = 3000;
-			obj.append($(".slide li").eq(0).clone().removeClass('active'));
-			obj.css("width",(len+1)*100+"%");
+			var last = obj.find("li:last-child").clone()
+			var first = obj.find("li:first-child").clone()
+			obj.append(first.removeClass('active'));
+			obj.prepend(last.removeClass('active'));
+			obj.css({
+				"width":(len+2)*100+"%",
+				"margin-left":-100+"%",
+			})
+
+			btnSet()
+			posSet()
+
 			function play(){
 				clearTimeout(timer);
 				pos++;
-				obj.animate({
+				obj.stop().animate({
 					marginLeft:-pos*100+"%"
 				}, 1000, function(){
-					if(pos>=len){
-						obj.css("marginLeft","0");
-						pos = 0;
+					if(pos>=len+1){
+						pos = 1;
+					} else if (pos < 1) {
+						pos = len;
 					}
+					obj.css("margin-left",-pos*100+"%");
 					$("li.active",obj).removeClass("active");
 					$("li",obj).eq(pos).addClass("active");
+					slide.find(".pos a.active").removeClass("active").css("background","#666")
+					slide.find(".pos a").eq(pos-1).addClass("active").css("background","#000")
 				})
 				timer = setTimeout(play,playTime);
 			}
+
+			function btnSet(){
+				slide.css({
+					position:"relative"
+				})
+				slide.append('<a href="#" class="arrow prev">&lt;</a> <a href="#" class="arrow next">&gt;</a>')
+				slide.find(".arrow").css({
+					position:"absolute",
+					top:"calc(50% - 40px)",
+					width:"40px",
+					height:"40px",
+					lineHeight:"40px",
+					fontSize:"20px",
+					color:"#000",
+					textAlign:"center",
+					textDecoration:"none"
+				})
+				slide.find(".arrow.prev").css("left", "0")
+				slide.find(".arrow.next").css("right", "0")
+
+				slide.on("click", ".arrow.next", play)
+				slide.on("click", ".arrow.prev", function () {
+					pos-=2
+					play()
+				})
+			}
+
+			function posSet(){
+				slide.append('<div class="pos"></div>')
+				slide.find(".pos").css({
+					position:"absolute",
+					bottom:"20px",
+					left:0,
+					right:0,
+					textAlign:"center",
+				})
+				for (var i=0; i<len; i++) {
+					slide.find(".pos").append('<a href="#"></a>')
+				}
+				slide.find(".pos a").css({
+					display:"inline-block",
+					width:"20px",
+					height:"20px",
+					borderRadius:"20px",
+					background:"#666",
+					margin:"0 3px"
+				}).eq(0).css({
+					background:"#000"
+				}).addClass("active")
+			}
+
 			timer = setTimeout(play,playTime);
+
+			slide.on("click", ".pos a", function () {
+				pos = $(this).index()
+				play();
+			})
 		}
 		slide();
 	</script>

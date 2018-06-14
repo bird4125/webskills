@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="./js/jquery-1.12.4.min.js"></script>
+	<style>
+		*{margin: 0; padding: 0;}
+		ul,li{list-style: none}
+		.slide{height: 400px;overflow-x: hidden;}
+		.slide ul,
+		.slide li{height: 400px}
+		.slide ul {width: 300%;display: flex;}
+		.slide li {width: 33.3%;display: flex;justify-content: center;align-items: center;position: relative;}
+		.slide li .bg{position: absolute; left: 0;bottom: 0;top: 0;right: 0;}
+		.slide .slide1 .bg{background: #faf;}
+		.slide .slide2 .bg{background: #aaf;}
+		.slide .slide3 .bg{background: #ffa;}
+		.slide .ment *{position: relative;}
+		.slide li.wow .ment{animation: troll 1s; opacity: 1;}
+		.slide li.wow .bg{animation: bgload 2s;}
+
+		@keyframes troll{
+			0% {opacity: 0;transform: translateY(-50px);}
+			60% {opacity: 1;transform: inherit;}
+		}
+
+		@keyframes bgload{
+			0% {}
+			40% {transform: skewY(-90deg);}
+			60% {transform: skewY(-90deg);}
+		}
+
+
+
+	</style>
+</head>
+<body>
+	<div class="slide">
+		<ul>
+			<li class="slide1 wow">
+				<div class="bg"></div>
+				<div class="ment">
+					<h2>wow</h2>
+				</div>
+			</li>
+			<li class="slide2">
+				<div class="bg"></div>
+				<div class="ment">
+					<h2>wow</h2>
+				</div>
+			</li>
+			<li class="slide3">
+				<div class="bg"></div>
+				<div class="ment">
+					<h2>wow</h2>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<script>
+		function slides(){
+			var pos =  0;
+			var lis = $(".slide li").length;
+			var uls = $(".slide ul");
+			var times = 3000;
+			function start(){
+				++pos;
+				if(pos == lis) {pos = 0}
+				uls.animate({
+					marginLeft:-pos*100+"%"
+				},1000,function(){
+					$(".slide li").removeClass("wow");
+					$(".slide li").eq(pos).addClass("wow");
+				})
+				setTimeout(start,times)
+			}
+			setTimeout(start,times)
+		}
+		slides();
+	</script>
+	
+</body>
+</html>

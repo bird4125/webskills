@@ -10,25 +10,30 @@
 		.slide{height: 400px;overflow-x: hidden;}
 		.slide ul,
 		.slide li{height: 400px}
-		.slide ul {width: 300%;display: flex;}
-		.slide li {width: 33.3%;display: flex;justify-content: center;align-items: center;position: relative;}
+		.slide ul {width: 400%;display: flex;}
+		.slide li {width: 25%;display: flex;justify-content: center;align-items: center;position: relative;}
 		.slide li .bg{position: absolute; left: 0;bottom: 0;top: 0;right: 0;}
 		.slide .slide1 .bg{background: #faf;}
 		.slide .slide2 .bg{background: #aaf;}
 		.slide .slide3 .bg{background: #ffa;}
-		.slide .ment *{position: relative;}
+		.slide li .ment *{position: relative;opacity: 0;}
+		.slide li.wow .ment *{opacity: 1;}
 		.slide li.wow .ment{animation: troll 1s; opacity: 1;}
 		.slide li.wow .bg{animation: bgload 2s;}
+		.slide li .bg{opacity: 1;}
 
 		@keyframes troll{
 			0% {opacity: 0;transform: translateY(-50px);}
 			60% {opacity: 1;transform: inherit;}
 		}
-
-
-
-
-
+		/*
+		@keyframes bgload{
+			0%  {opacity: 1;transform: skewX(-90deg);}
+			40%  {opacity: 1;transform: skewX(-80deg);}
+			60% {opacity: 1;}
+			100% {opacity: 0;}
+		}
+			*/
 	</style>
 </head>
 <body>
@@ -61,12 +66,16 @@
 			var lis = $(".slide li").length;
 			var uls = $(".slide ul");
 			var times = 3000;
+			uls.append($(".slide li").eq(0).clone().removeClass("wow"));
 			function start(){
 				++pos;
-				if(pos == lis) {pos = 0}
 				uls.animate({
 					marginLeft:-pos*100+"%"
 				},1000,function(){
+					if(pos>=lis){
+						uls.css("marginLeft","0");
+						pos = 0;
+					}
 					$(".slide li").removeClass("wow");
 					$(".slide li").eq(pos).addClass("wow");
 				})

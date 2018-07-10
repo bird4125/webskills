@@ -48,3 +48,8 @@ h2:after{content: "";display:block;width: 80px;height: 1px;background: #000;marg
 .foo_in .foo_main > div{margin: 20px;}
 .foo_in .foo_main .h4{color: #fff;font-size: 25px}
 .foo_in .foo_main .main_i{color: #fff;font-size: 17px}
+
+.more_info {width: 2000px;background: #faa;}
+.more_info ul{display: flex;}
+.more_info li{height: 670px;background: #faf;width: 33.3%}
+.more_info li:nth-child(1){}

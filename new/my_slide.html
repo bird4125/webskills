@@ -10,71 +10,100 @@
 		.slide{height: 400px;overflow-x: hidden;}
 		.slide ul,
 		.slide li{height: 400px}
-		.slide ul {width: 300%;display: flex;}
-		.slide li {width: 33.3%;display: flex;justify-content: center;align-items: center;position: relative;}
+		.slide ul {width: 400%;display: flex;}
+		.slide li {width: 25%;display: flex;justify-content: center;align-items: center;position: relative;}
 		.slide li .bg{position: absolute; left: 0;bottom: 0;top: 0;right: 0;}
 		.slide .slide1 .bg{background: #faf;}
 		.slide .slide2 .bg{background: #aaf;}
 		.slide .slide3 .bg{background: #ffa;}
-		.slide .ment *{position: relative;}
-		.slide li.wow .ment{animation: troll 1s; opacity: 1;}
-		.slide li.wow .bg{animation: bgload 2s;}
+		.slide li .ment *{position: relative;opacity: 0;}
+		.slide li.active .ment *{opacity: 1;}
+		.slide li.active .ment{animation: troll 1s; opacity: 1;}
+		.slide li.active .bg{animation: bgload 2s;}
+		.slide li .bg{opacity: 1;}
 
 		@keyframes troll{
 			0% {opacity: 0;transform: translateY(-50px);}
 			60% {opacity: 1;transform: inherit;}
 		}
-
-
-
-
-
+		/*
+		@keyframes bgload{
+			0%  {opacity: 1;transform: skewX(-90deg);}
+			40%  {opacity: 1;transform: skewX(-80deg);}
+			60% {opacity: 1;}
+			100% {opacity: 0;}
+		}
+			*/
+		
+		.button .btn {position: absolute; width:20px;height: 20px; background: #666; left: calc(50% - 40px);top: calc(50% - 40px);bottom:0; right: 0; }
+		.button .btn.o1{left: calc(50% - 40px);font-color:#000;}
+		.button .btn.o2{left: 50%;;font-color:#000;}
+		.button .btn.o3{left: calc(50% + 40px);font-color:#000;}
 	</style>
 </head>
 <body>
 	<div class="slide">
 		<ul>
-			<li class="slide1 wow">
+			<li class="slide1 active">
 				<div class="bg"></div>
 				<div class="ment">
-					<h2>wow</h2>
+					<h2>active</h2>
 				</div>
 			</li>
 			<li class="slide2">
 				<div class="bg"></div>
 				<div class="ment">
-					<h2>wow</h2>
+					<h2>active</h2>
 				</div>
 			</li>
 			<li class="slide3">
 				<div class="bg"></div>
 				<div class="ment">
-					<h2>wow</h2>
+					<h2>active</h2>
 				</div>
 			</li>
 		</ul>
+		<div class="button">
+			<div class="btn o1">ddd</div>
+			<div class="btn o2">ddd</div>
+			<div class="btn o3">ddd</div>
+		</div>
 	</div>
 
 	<script>
-		function slides(){
-			var pos =  0;
-			var lis = $(".slide li").length;
+		function ready(){
+			var pos = 0;
+			var len = $(".slide li").length;
 			var uls = $(".slide ul");
-			var times = 3000;
+			var timer = 1500;
+			$(".slide ul").append($(".slide li").eq(0).clone())
+			$(".slide li").eq(len).removeClass("active")
 			function start(){
+<<<<<<< HEAD
 				++pos;
 				if(pos >= lis) {pos = 0}
+=======
+				pos++;
+>>>>>>> fe37d5907555e18e561f513ebd6c063565903b28
 				uls.animate({
-					marginLeft:-pos*100+"%"
-				},1000,function(){
-					$(".slide li").removeClass("wow");
-					$(".slide li").eq(pos).addClass("wow");
+					marginLeft : -pos*100+"%"
+				},function(){
+					if (pos == len) {
+						uls.css({
+							marginLeft:0,
+						});
+						pos = 0;
+					}
+					$(".slide li").removeClass("active");
+					$(".slide li").eq(pos).addClass("active");
+					$(".slide .button div").removeClass("test")
+					$(".slide .button div").eq(pos).addClass("test")
 				})
-				setTimeout(start,times)
+				console.log(pos)
 			}
-			setTimeout(start,times)
+			setInterval(start,timer)
 		}
-		slides();
+		ready();
 	</script>
 	
 </body>

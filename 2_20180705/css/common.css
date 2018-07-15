@@ -29,11 +29,7 @@ input[type=radio]{display: none;}
 
 .slide_sec{height: 700px;margin-top: 140px;position: relative;width: 5120px;}
 .slide_sec .slogan {background: url(../img/txt-slogan.png) no-repeat center / cover;position: absolute;z-index: 90;left:450px;right:0;top: 200px;bottom: 0;width: 704px; height: 55px;}
-.slide_ul {display: flex;width: 100%;height: 700px;animation: slides 4s infinite;}
-.slide_ul li{width: 50%;height: 700px;}
-.circle {width: 20px; height: 20px; background: #fff;position:absolute;cursor: pointer; border-radius: 25px}
 
-.pause {width: 13px; height: 20px; background:url(../img/icon-stop.png);position:absolute;cursor: pointer;}
 
 #pos1:checked ~ .slide_ul .page1 {width: 40px;  height:20px;}
 #pos2:checked ~ .slide_ul .page2 {width: 40px;  height:20px;}

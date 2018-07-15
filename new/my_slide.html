@@ -63,7 +63,7 @@
 			var times = 3000;
 			function start(){
 				++pos;
-				if(pos == lis) {pos = 0}
+				if(pos >= lis) {pos = 0}
 				uls.animate({
 					marginLeft:-pos*100+"%"
 				},1000,function(){

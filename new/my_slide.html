@@ -79,7 +79,12 @@
 			$(".slide ul").append($(".slide li").eq(0).clone())
 			$(".slide li").eq(len).removeClass("active")
 			function start(){
+<<<<<<< HEAD
+				++pos;
+				if(pos >= lis) {pos = 0}
+=======
 				pos++;
+>>>>>>> fe37d5907555e18e561f513ebd6c063565903b28
 				uls.animate({
 					marginLeft : -pos*100+"%"
 				},function(){

@@ -15,11 +15,18 @@ body{font-family:"Nanum Barun Gothic";font-weight:200;letter-spacing:-0.5px;over
 .head_top {background: #34495e; width: 100%;}
 .head_top div{display: flex;height: 40px; line-height: 40px;justify-content: flex-end;margin: 0 auto;width: 1280px}
 .head_top div a{margin: 0 10px;font-size: 12px;color: #fff;}
+.head_top div a:nth-child(1){}
+.head_top div a:nth-child(2):before{content: "";display: inline-block;width: 1px ;height: 10px; background: #fff;margin-right: 15px;}
+.head_top div a:nth-child(2):after{content: "";display: inline-block;width: 1px ;height: 10px; background: #fff;margin-left: 15px;}
+.head_top div a:nth-child(3){}
 .head_btm {width: 100%;}
 .head_btm>div{width: 1280px;margin: 0 auto;display: flex;height: 100px;justify-content: space-between;align-items: center;}
 .head_btm .gnb{display: flex;}
 .head_btm .gnb a{width: 170px; height: 100px; text-align: center;line-height: 100px;}
+.head_btm .gnb a:hover{background: #11aaff;color: #fff;}
 .head_btm .logo{background: url(../img/logo.png);width: 173px;height: 67px;}
+
+
 
 /* slide_section 임시*/
 .slide_sec{height: 300px;width: 100%;}
@@ -111,9 +118,6 @@ body{font-family:"Nanum Barun Gothic";font-weight:200;letter-spacing:-0.5px;over
 .tour_after>ul>li>div .after_img:hover img:nth-child(1){margin-left: 600px;transition: .3s}
 .tour_after>ul>li>div .after_img:hover img:nth-child(2){margin-left: 300px;transition: .3s}
 
-
-
-
 .tour_after>ul>li>div .after_box{margin-left: 25px;height: 200px;width: 800px}
 .tour_after>ul>li>div .after_box h3,p{color: #000;}
 .tour_after>ul>li>div .after_box h3{margin: 10px 0px;font-size: 21px;color: #113184;font-weight: normal;}
@@ -122,3 +126,30 @@ body{font-family:"Nanum Barun Gothic";font-weight:200;letter-spacing:-0.5px;over
 .tour_after>ul>li>div .after_box p:nth-child(4){margin: 10px 0px;font-size: 15px;color: #585858}
 
 /*footer*/
+
+.footer{height: 150px;width: 1280px; margin: 0 auto;margin-top: 90px;}
+.footer>ul{width: 1100px;margin-left: 30px;display: flex;justify-content: space-between;}
+.footer .ftr_left{display: flex;flex-flow: column;}
+.footer .ftr_left .icons {display: flex;}
+.footer .ftr_left .icons li{width: 25px; height: 25px;margin: 0 5px}
+.footer .ftr_left .icons li:nth-child(1){background: url(../img/icon-fb.png);}
+.footer .ftr_left .icons li:nth-child(2){background: url(../img/icon-gg.png);}
+.footer .ftr_left .icons li:nth-child(3){background: url(../img/icon-tt.png);}
+.footer .ftr_left .icons li:nth-child(4){background: url(../img/icon-is.png);}
+
+.footer .ftr_left .abouts a,
+.footer .ftr_left .abouts2 a{font-size: 13px;}
+.footer .ftr_left .abouts a:nth-child(1):after,
+.footer .ftr_left .abouts a:nth-child(2):after,
+.footer .ftr_left .abouts a:nth-child(3):after,
+.footer .ftr_left .abouts a:nth-child(4):after{content: "";display: inline-block;width: 1px; height: 10px; background: #000;margin-left: 7px;margin-right: 7px}
+
+
+.footer .ftr_left .abouts2 a:nth-child(1):after,
+.footer .ftr_left .abouts2 a:nth-child(2):after,
+.footer .ftr_left .abouts2 a:nth-child(3):after{content: "";display: inline-block;width: 1px; height: 10px; background: #000;margin-left: 7px;margin-right: 7px}
+.footer .ftr_left .Copys a {font-size: 15px;}
+
+
+
+

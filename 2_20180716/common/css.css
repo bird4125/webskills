@@ -77,10 +77,10 @@ body{font-family:"Nanum Barun Gothic";font-weight:200;letter-spacing:-0.5px;over
 .food_info li:nth-child(10){background:url(../img/food10.jpg) no-repeat center / cover;}
 
 
-.type1{width: 595px;height: 595px;background: #aaa;}
-.type2{width: 285px;height: 285px;background: #ffa;}
-.type3{width: 285px;height: 595px;background: #aaf;}
-.type4{width: 595px;height: 285px;background: #aff;}
+.type1{width: 595px;height: 595px;}
+.type2{width: 285px;height: 285px;}
+.type3{width: 285px;height: 595px;}
+.type4{width: 595px;height: 285px;}
 
 .food_box .f_after div h3{margin-bottom: 10px}
 .food_box .f_after div p:nth-child(2){margin-bottom: 17px;font-size: 15px}

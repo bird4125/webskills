@@ -25,7 +25,6 @@ input[type=checkbox] { display: none; }
 .slide_sec { height: 700px; position: relative;}
 .slide_sec:after { background: url(../img/txt-slogan.png) no-repeat center / cover; width: 704px; height: 55px; position: absolute; z-index: 50; left: calc(50% - 350px); right: 0; top: 150px; bottom: 0; content: ""; }
 .slide_sec ul { height: 700px; width: 400%; display: flex; position: relative; animation: slide1 8s infinite; }
-.slide_sec .btn { position: absolute; width: 20px; height: 20px; background: #fff; z-index: 50; border-radius: 20px; cursor: pointer; }
 .slide_sec ul li { width: 25%; }
 .slide_sec .pos { position: absolute; bottom: 30px; left: 0; right: 0; display: flex; justify-content: center; z-index: 20; align-items: center; }
 .slide_sec .pos label { margin: 0 5px; cursor: pointer; }
@@ -43,18 +42,22 @@ input[type=checkbox] { display: none; }
 #pos1:checked ~ .slide_sec .arrow label:nth-child(2) { animation: arrow2 8s infinite; }
 #pos1:checked ~ .slide_sec .arrow label:nth-child(3) { animation: arrow3 8s infinite; }
 #pos1:checked ~ .slide_sec .arrow label:nth-child(4) { animation: arrow4 8s infinite; }
+
 #pos2:checked ~ .slide_sec .arrow label:nth-child(1) { animation: arrow4 8s infinite; }
 #pos2:checked ~ .slide_sec .arrow label:nth-child(2) { animation: arrow1 8s infinite; }
 #pos2:checked ~ .slide_sec .arrow label:nth-child(3) { animation: arrow2 8s infinite; }
 #pos2:checked ~ .slide_sec .arrow label:nth-child(4) { animation: arrow3 8s infinite; }
+
 #pos3:checked ~ .slide_sec .arrow label:nth-child(1) { animation: arrow3 8s infinite; }
 #pos3:checked ~ .slide_sec .arrow label:nth-child(2) { animation: arrow4 8s infinite; }
 #pos3:checked ~ .slide_sec .arrow label:nth-child(3) { animation: arrow1 8s infinite; }
 #pos3:checked ~ .slide_sec .arrow label:nth-child(4) { animation: arrow2 8s infinite; }
+
 #pos4:checked ~ .slide_sec .arrow label:nth-child(1) { animation: arrow2 8s infinite; }
 #pos4:checked ~ .slide_sec .arrow label:nth-child(2) { animation: arrow3 8s infinite; }
 #pos4:checked ~ .slide_sec .arrow label:nth-child(3) { animation: arrow4 8s infinite; }
 #pos4:checked ~ .slide_sec .arrow label:nth-child(4) { animation: arrow1 8s infinite; }
+
 #stop:checked ~ .slide_sec ul, #stop:checked ~ .slide_sec label { animation-play-state: paused !important; }
 #pos1:checked ~ .slide_sec ul { animation: slide1 8s infinite }
 #pos2:checked ~ .slide_sec ul { animation: slide2 8s infinite }

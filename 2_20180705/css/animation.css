@@ -42,9 +42,9 @@
 }
 @keyframes slide4 {
 	100%, 0% , 13%{margin-left: -300%}
-	25% , 38%{margin-left: -200%}
+	25% , 38%{margin-left: 00%}
 	51% , 64%{margin-left: -100%}
-	77% , 90%{margin-left: 00%}
+	77% , 90%{margin-left: -200%}
 }
 @keyframes pos1{
 	100%, 0% , 13%{width: 30px;background: yellow;}

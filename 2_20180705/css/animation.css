@@ -1,0 +1,72 @@
+@keyframes arrow1 {
+	100%, 0%, 24% {z-index:40;}
+	25%, 49% {z-index:0;}
+	50%, 74% {z-index:0;}
+	75%, 99% {z-index:0;}
+}
+@keyframes arrow2 {
+	100%, 0%, 24% {z-index:0;}
+	25%, 49% {z-index:40;}
+	50%, 74% {z-index:0;}
+	75%, 99% {z-index:0;}
+}
+@keyframes arrow3 {
+	100%, 0%, 24% {z-index:0;}
+	25%, 49% {z-index:0;}
+	50%, 74% {z-index:40;}
+	75%, 99% {z-index:0;}
+}
+@keyframes arrow4 {
+	100%, 0%, 24% {z-index:0;}
+	25%, 49% {z-index:0;}
+	50%, 74% {z-index:0;}
+	75%, 99% {z-index:40;}
+}
+@keyframes slide1 {
+	100%, 0% , 13%{margin-left: 0%}
+	25% , 38%{margin-left: -100%}
+	51% , 64%{margin-left: -200%}
+	77% , 90%{margin-left: -300%}
+}
+@keyframes slide2 {
+	100%, 0% , 13%{margin-left: -100%}
+	25% , 38%{margin-left: -200%}
+	51% , 64%{margin-left: -300%}
+	77% , 90%{margin-left: 0%}
+}
+@keyframes slide3 {
+	100%, 0% , 13%{margin-left: -200%}
+	25% , 38%{margin-left: -300%}
+	51% , 64%{margin-left: 00%}
+	77% , 90%{margin-left: -100%}
+}
+@keyframes slide4 {
+	100%, 0% , 13%{margin-left: -300%}
+	25% , 38%{margin-left: 00%}
+	51% , 64%{margin-left: -100%}
+	77% , 90%{margin-left: -200%}
+}
+@keyframes pos1{
+	100%, 0% , 13%{width: 30px;background: yellow;}
+	25% , 38%{width: 20px;background: #fff;}
+	51% , 64%{width: 20px;background: #fff;}
+	77% , 90%{width: 20px;background: #fff;}
+}
+@keyframes pos2{
+	100%, 0% , 13%{width: 20px;background: #fff;}
+	25% , 38%{width: 30px;background: yellow;}
+	51% , 64%{width: 20px;background: #fff;}
+	77% , 90%{width: 20px;background: #fff;}
+}
+@keyframes pos3{
+	100%, 0% , 13%{width: 20px;background: #fff;}
+	25% , 38%{width: 20px;background: #fff;}
+	51% , 64%{width: 30px;background: yellow;}
+	77% , 90%{width: 20px;background: #fff;}
+}
+@keyframes pos4{
+	100%, 0% , 13%{width: 20px;background: #fff;}
+	25% , 38%{width: 20px;background: #fff;}
+	51% , 64%{width: 20px;background: #fff;}
+	77% , 90%{width: 30px;background: yellow;}
+}

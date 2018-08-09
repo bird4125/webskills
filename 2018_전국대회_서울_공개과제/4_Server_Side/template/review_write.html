@@ -1,0 +1,87 @@
+<div class="review-write">
+    <h4 class="modal-title">리뷰 작성</h4>
+    <form action="#!" method="post" onsubmit="submitContents(this); return false;" enctype="multipart/form-data">
+        <ul class="row s12">
+            <li class="col s3 input-field">
+                <select name="destination">
+                    <option value="" disabled selected>관광지 선택</option>
+                    <option value="24">낭도</option>
+                    <option value="23">하화도</option>
+                    <option value="22">공룡발자국화석</option>
+                    <option value="21">여자도</option>
+                    <option value="20">방죽포해수욕장</option>
+                    <option value="19">여수 상백도·하백도 일원</option>
+                    <option value="18">돌산해양낚시공원</option>
+                    <option value="17">여수 올빼미 야경투어</option>
+                    <option value="16">여수이순신마리나</option>
+                    <option value="15">백호산 등산로</option>
+                    <option value="14">구봉산</option>
+                    <option value="13">고소대</option>
+                    <option value="12">만성리 검은모래 해변</option>
+                    <option value="11">백야도</option>
+                    <option value="10">이순신대교</option>
+                    <option value="9">여수해상케이블카</option>
+                    <option value="8">영취산진달래</option>
+                    <option value="7">여수밤바다/산단야경</option>
+                    <option value="6">진남관</option>
+                    <option value="5">여수세계박람회장</option>
+                    <option value="4">금오도비렁길</option>
+                    <option value="3">향일암</option>
+                    <option value="2">거문도/백도</option>
+                    <option value="1">오동도</option>
+                </select>
+            </li>
+            <li class="col s9 input-field">
+                <input id="review_subject" name="subject" type="text" class="validate" required>
+                <label for="review_subject">제목</label>
+            </li>
+            <li class="col s12 input-field file-field">
+                <div class="btn">
+                    <span>대표이미지</span>
+                    <input type="file" name="file" accept="image/*">
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text">
+                </div>
+            </li>
+            <li class="col s12">
+                <textarea id="review-content" name="content" cols="80" rows="20" style="width: 100%; height: 300px; display: none;"></textarea>
+            </li>
+            <li class="col s12">
+                <div class="center">
+                    <button type="submit" class="btn-small light-blue darken-3 waves-effect waves-light">전송</button>
+                    <button type="button" class="btn-small light-blue darken-1 waves-effect waves-light layer_close">닫기</button>
+                </div>
+            </li>
+        </ul>
+    </form>
+</div>
+<script type="text/javascript">
+
+var oEditors = [];
+
+nhn.husky.EZCreator.createInIFrame({
+    oAppRef: oEditors,
+    elPlaceHolder: "review-content",
+    sSkinURI: "public/se2/SmartEditor2Skin.html",  
+    htParams : {
+        bUseToolbar : true,             // 툴바 사용 여부 (true:사용/ false:사용하지 않음)
+        bUseVerticalResizer : true,     // 입력창 크기 조절바 사용 여부 (true:사용/ false:사용하지 않음)
+        bUseModeChanger : true,         // 모드 탭(Editor | HTML | TEXT) 사용 여부 (true:사용/ false:사용하지 않음)
+    }, //boolean
+    fCreator: "createSEditor2"
+})
+    
+function submitContents(frm) {
+    oEditors.getById["review-content"].exec("UPDATE_CONTENTS_FIELD", []);  // 에디터의 내용이 textarea에 적용됩니다.
+    
+    // 에디터의 내용에 대한 값 검증은 이곳에서 document.getElementById("review-content").value를 이용해서 처리하면 됩니다.
+
+    alert(obj.content.value)
+    try {
+        obj.submit();
+    } catch(e) {}
+}
+
+$('select').formSelect();
+</script>

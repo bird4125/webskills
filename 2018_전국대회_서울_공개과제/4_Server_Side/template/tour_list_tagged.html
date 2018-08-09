@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>여수시 관광정보 &gt; 관광지 정보</title>
+    <link rel="stylesheet" type="text/css" href="public/materialize/css/materialize.css">
+    <link rel="stylesheet" type="text/css" href="public/css/common.css">
+    <script type="text/javascript" src="public/js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="public/materialize/js/materialize.min.js"></script>
+    <script type="text/javascript" src="public/js/common.js"></script>
+</head>
+
+<body>
+    <!-- site header -->
+    <header class="site-header">
+        <!-- utli menu -->
+        <div class="header-top">
+            <div class="container">
+                <ul>
+                    <li><a href="member_login.html" class="layerOpener">로그인</a></li>
+                    <li><a href="member_register.html" class="layerOpener">회원가입</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="header-content container" role="navigation">
+            <!-- logo -->
+            <h3 class="logo"><a href="index.html"><img src="public/img/logo.png" alt="아름다운 여수, 행복한 시민"></a></h3>
+            <!-- global navigation bar  -->
+            <ul class="gnb">
+                <li class="active">
+                    <a href="tour_list.html">관광지 정보</a>
+                </li>
+                <li>
+                    <a href="course_list.html">추천 코스 여행</a>
+                </li>
+                <li>
+                    <a href="review_list.html">관광지 리뷰</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <!-- site content -->
+    <section class="site-content">
+        <!-- visual area -->
+        <section class="visual sub">
+            <h3><img src="public/img/txt-slogan.png" alt="해양 관광 휴양 도시, 생명의 푸르름 가득한 여수"></h3>
+        </section>
+        <!-- main content -->
+        <section class="content-wrap container">
+            <h2 class="content-title">관광지 정보</h2>
+            <div class="row">
+                <div class="search_frm">
+                    <form action="" method="post">
+                        <fieldset>
+                            <!-- <legend>관광지 검색</legend> -->
+                            <input type="text" id="search_key" name="key" placeholder="검색어를 입력해주세요" size="50" value="" class="browser-default">
+                            <button type="submit" class="btn blue waves-effect waves-light">검색</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">총 10 개의 관광지가 조회되었습니다</div>
+            </div>
+            <div class="row">
+                <div class="col s12 tag_list">
+                    <h4>태그</h4>
+                    <a href="#" style="font-size:23px" class="active">#여수10경 [취소]</a>
+                    <a href="#" style="font-size:16px">#섬</a>
+                    <a href="#" style="font-size:16px">#야경</a>
+                    <a href="#" style="font-size:15px">#돌산공원</a>
+                    <a href="#" style="font-size:15px">#등대</a>
+                    <a href="#" style="font-size:15px">#백호산</a>
+                    <a href="#" style="font-size:15px">#삼산면</a>
+                    <a href="#" style="font-size:15px">#이순신대교</a>
+                    <a href="#" style="font-size:15px">#임진왜란</a>
+                    <a href="#" style="font-size:14px">#가막만</a>
+                    <a href="#" style="font-size:14px">#걷기</a>
+                    <a href="#" style="font-size:14px">#공룡</a>
+                    <a href="#" style="font-size:14px">#구봉산</a>
+                    <a href="#" style="font-size:14px">#금단의섬</a>
+                    <a href="#" style="font-size:14px">#낙타섬</a>
+                    <a href="#" style="font-size:14px">#낚시</a>
+                    <a href="#" style="font-size:14px">#낭도</a>
+                    <a href="#" style="font-size:14px">#녹산등대</a>
+                    <a href="#" style="font-size:14px">#대여자도</a>
+                    <a href="#" style="font-size:14px">#대웅전</a>
+                    <a href="#" style="font-size:14px">#돌산</a>
+                    <a href="#" style="font-size:14px">#돌산낚시</a>
+                    <a href="#" style="font-size:14px">#돌산대교</a>
+                    <a href="#" style="font-size:14px">#동령소갈비</a>
+                    <a href="#" style="font-size:14px">#동백꽃</a>
+                    <a href="#" style="font-size:14px">#등산로</a>
+                    <a href="#" style="font-size:14px">#마리나</a>
+                    <a href="#" style="font-size:14px">#막걸리</a>
+                    <a href="#" style="font-size:14px">#모래찜질</a>
+                    <a href="#" style="font-size:14px">#바다낚시</a>
+                    <a href="#" style="font-size:14px">#발자국</a>
+                    <a href="#" style="font-size:14px">#방죽포해수욕장</a>
+                    <a href="#" style="font-size:14px">#백도</a>
+                    <a href="#" style="font-size:14px">#백야도</a>
+                    <a href="#" style="font-size:14px">#백호도</a>
+                    <a href="#" style="font-size:14px">#비렁길</a>
+                    <a href="#" style="font-size:14px">#빅오</a>
+                    <a href="#" style="font-size:14px">#사도</a>
+                    <a href="#" style="font-size:14px">#서당산</a>
+                    <a href="#" style="font-size:14px">#섬여객선</a>
+                    <a href="#" style="font-size:14px">#송여자도</a>
+                    <a href="#" style="font-size:14px">#스카이타워</a>
+                    <a href="#" style="font-size:14px">#안도대교</a>
+                    <a href="#" style="font-size:14px">#엑스포</a>
+                    <a href="#" style="font-size:14px">#여수</a>
+                    <a href="#" style="font-size:14px">#여수요트</a>
+                    <a href="#" style="font-size:14px">#여자만</a>
+                    <a href="#" style="font-size:14px">#역사코스</a>
+                    <a href="#" style="font-size:14px">#영화촬영</a>
+                    <a href="#" style="font-size:14px">#오동도</a>
+                    <a href="#" style="font-size:14px">#요트</a>
+                    <a href="#" style="font-size:14px">#웅천</a>
+                    <a href="#" style="font-size:14px">#이색체험</a>
+                    <a href="#" style="font-size:14px">#이순신</a>
+                    <a href="#" style="font-size:14px">#인어</a>
+                    <a href="#" style="font-size:14px">#인어공주</a>
+                    <a href="#" style="font-size:14px">#일출</a>
+                    <a href="#" style="font-size:14px">#자산공원</a>
+                    <a href="#" style="font-size:14px">#자연암반터널</a>
+                    <a href="#" style="font-size:14px">#전망대</a>
+                    <a href="#" style="font-size:14px">#절벽</a>
+                    <a href="#" style="font-size:14px">#진남관</a>
+                    <a href="#" style="font-size:14px">#진달래</a>
+                    <a href="#" style="font-size:14px">#진례산</a>
+                    <a href="#" style="font-size:14px">#충무공</a>
+                    <a href="#" style="font-size:14px">#케이블카</a>
+                    <a href="#" style="font-size:14px">#타루비</a>
+                    <a href="#" style="font-size:14px">#태양열</a>
+                    <a href="#" style="font-size:14px">#통제이공수군대첩비</a>
+                    <a href="#" style="font-size:14px">#트래킹꽃섬</a>
+                    <a href="#" style="font-size:14px">#한산사</a>
+                    <a href="#" style="font-size:14px">#해송</a>
+                    <a href="#" style="font-size:14px">#해수욕장</a>
+                    <a href="#" style="font-size:14px">#화석지</a>
+                     </div>
+            </div>
+            <div class="row">
+                <article class="card tourlist">
+                    <a href="tour_view.html" class="mask layerOpener"></a>
+                    <div class="img_wrap" style="background-image:url(public/upload/1531707779_60150.jpg)"></div>
+                    <div class="info">
+                        <h3 class="subject">이순신대교</h3>
+                        <div class="description">수에서 광양을 이어주는 순수 우리 기술로 만든 국내 첫 현수교현수교 가운데 세계최고의 높이를 자랑하 ... [더보기]</div>
+                        <p class="tag">
+                            <span>#여수10경</span> <span>#야경</span> <span>#전망대</span> <span>#이순신</span>
+                        </p>
+                    </div>
+                </article>
+                <article class="card tourlist">
+                    <a href="tour_view.html" class="mask layerOpener"></a>
+                    <div class="img_wrap" style="background-image:url(public/upload/1531707673_49255.jpg)"></div>
+                    <div class="info">
+                        <h3 class="subject">여수해상케이블카</h3>
+                        <div class="description">끝없이 펼쳐진 바다경관여수 돌산과 자산공원을 잇는 1.5Km 구간의 국내 첫 해상케이블카로 바닥이 ... [더보기]</div>
+                        <p class="tag">
+                            <span>#여수10경</span> <span>#케이블카</span> <span>#돌산공원</span> <span>#자산공원</span>
+                        </p>
+                    </div>
+                </article>
+                <article class="card tourlist">
+                    <a href="tour_view.html" class="mask layerOpener"></a>
+                    <div class="img_wrap" style="background-image:url(public/upload/1531707613_62006.jpg)"></div>
+                    <div class="info">
+                        <h3 class="subject">영취산진달래</h3>
+                        <div class="description">온 산이 붉게 물들어 가슴이 먹먹하도록 만드는 진달래고향의 정취를 자아내는 영취산에 4월이면 활짝 ... [더보기]</div>
+                        <p class="tag">
+                            <span>#여수10경</span> <span>#이순신대교</span> <span>#진달래</span> <span>#진례산</span>
+                        </p>
+                    </div>
+                </article>
+                <article class="card tourlist">
+                    <a href="tour_view.html" class="mask layerOpener"></a>
+                    <div class="img_wrap" style="background-image:url(public/upload/1531707555_51071.jpg)"></div>
+                    <div class="info">
+                        <h3 class="subject">여수밤바다/산단야경</h3>
+                        <div class="description">낭만과 황홀함이 넘치는 여수 도심 야경인기그룹 버스커버스커가 노래로 부를 만큼 바다를 끼고 도는 해 ... [더보기]</div>
+                        <p class="tag">
+                            <span>#여수10경</span> <span>#야경</span> <span>#이순신대교</span> <span>#돌산대교</span>
+                        </p>
+                    </div>
+                </article>
+                <article class="card tourlist">
+                    <a href="tour_view.html" class="mask layerOpener"></a>
+                    <div class="img_wrap" style="background-image:url(public/upload/1531707480_69855.jpg)"></div>
+                    <div class="info">
+                        <h3 class="subject">진남관</h3>
+                        <div class="description">선시대 400년간 수군의 본거지였던 여수국보 제304호인 진남관은 임진왜란이 끝난 다음해에 세운 단 ... [더보기]</div>
+                        <p class="tag">
+                            <span>#여수10경</span> <span>#충무공</span> <span>#임진왜란</span> <span>#역사코스</span>
+                        </p>
+                    </div>
+                </article>
+                <article class="card tourlist">
+                    <a href="tour_view.html" class="mask layerOpener"></a>
+                    <div class="img_wrap" style="background-image:url(public/upload/1531707238_80917.jpg)"></div>
+                    <div class="info">
+                        <h3 class="subject">여수세계박람회장</h3>
+                        <div class="description">끝없이 펼쳐진 바다와 공연이벤트전 세계인에 감동을 선사했던 여수박람회장은 지구촌 단 하나뿐인 화려한 ... [더보기]</div>
+                        <p class="tag">
+                            <span>#여수10경</span> <span>#빅오</span> <span>#스카이타워</span> <span>#엑스포</span>
+                        </p>
+                    </div>
+                </article>
+                <article class="card tourlist">
+                    <a href="tour_view.html" class="mask layerOpener"></a>
+                    <div class="img_wrap" style="background-image:url(public/upload/1531707238_80916.jpg)"></div>
+                    <div class="info">
+                        <h3 class="subject">금오도비렁길</h3>
+                        <div class="description">‘비렁’은 벼랑(절벽)의 여수사투리&nbsp;여름 휴가지로 추천할 정도로 유명해진 금오도의 아름다운 ... [더보기]</div>
+                        <p class="tag">
+                            <span>#여수10경</span> <span>#절벽</span> <span>#안도대교</span> <span>#인어공주</span>
+                        </p>
+                    </div>
+                </article>
+                <article class="card tourlist">
+                    <a href="tour_view.html" class="mask layerOpener"></a>
+                    <div class="img_wrap" style="background-image:url(public/upload/1531706024_85384.jpg)"></div>
+                    <div class="info">
+                        <h3 class="subject">향일암</h3>
+                        <div class="description">커다란 바위 동굴인 일주문을 지나 만나는 새로운 세상절벽에 세워져 더 신비로운 향일암에 올라서면 세 ... [더보기]</div>
+                        <p class="tag">
+                            <span>#여수10경</span> <span>#돌산</span> <span>#일출</span> <span>#대웅전</span> <span>#임진왜란</span>
+                        </p>
+                    </div>
+                </article>
+            </div>
+            <ul class="pagination center">
+                <li class="waves-effect"><a href="tour_list.html"><i class="material-icons">chevron_left</i></a></li>
+                <li class="waves-effect active"><a href="tour_list.html">1</a></li>
+                <li class="waves-effect"><a href="tour_list.html">2</a></li>
+                <li class="waves-effect"><a href="tour_list.html"><i class="material-icons">chevron_right</i></a></li>
+            </ul>
+            <script type="text/javascript" src="public/se2/js/HuskyEZCreator.js"></script>
+        </section>
+    </section>
+    <!-- site footer -->
+    <footer class="site-footer">
+        <div class="container text-center">COPYRIGHT (C) 2018 WEBSKILLS.KOREA ALL RIGHT RESERVED</div>
+    </footer>
+</body>
+
+</html>
